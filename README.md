@@ -1,40 +1,36 @@
+# Diese Übersetzung ist aktuell noch in Arbeit
+
 # deno_website2
 
 [![Build Status](https://github.com/denoland/deno_website2/workflows/ci/badge.svg?branch=master&event=push)](https://github.com/denoland/deno_website2/actions)
 
-This is the code for https://deno.land/
+Das ist der Code für https://deno.land/
 
-This website consists of two parts
+Diese website besteht aus zwei teilen
 
-1. A Cloudflare Worker
-2. A Next.js app hosted on Vercel
+1. Einem Cloudflare Worker
+2. Einer Next.js app gehostet auf Vercel
 
-We want to provide pretty and semantic URLs for modules that will be used within
-Deno. For example: https://deno.land/std/http/server.ts
+Wir möchten saubere und semantische URLs für Module bereitstellen, die in Deno
+verwendet werden. Zum Beispiel: https://deno.land/std/http/server.ts
 
-When we request this file inside of Deno, we need to receive back the raw
-content of the file. However, when we visit that URL in the browser we want to
-see a pretty HTML file with syntax highlighting.
+Wenn wir diese Datei in Deno anfordern, möchten wir nur den Inhalt dieser
+Datei erhalten. Jedoch, wenn wir diese URL im Browser besuchen, möchten wir 
+eine schöne HTML-Datei mit Syntaxhervorhebung sehen.
 
-To accomplish this the Cloudflare Worker looks at the "Accept:" HTTP header to
-see if the client wants HTML or not. If it does want HTML, we simply proxy the
-request to Vercel. (We use Vercel because of their nice GitHub integration.)
+Um dies zu erreichen, überprüft der Cloudflare Worker, den HTTP-Header, um
+festzustellen, ob der Client eine HTML-Datei möchte oder nicht. Wenn eine
+HTML-Datei verlangt wird, wird diese Anfrage einfach an Vercel weitergeleitet.
+(Wir verwenden Vercel wegen ihrer GitHub Integration.)
 
-## History
+## Geschichte
 
-This is a rewrite of the Deno website it will combine the code in
-https://github.com/denoland/deno/tree/f96aaa802b245c8b3aeb5d57b031f8a55bb07de2/website
-and https://github.com/denoland/registry and have faster deployment.
+Dies ist eine Neuentwicklung der Deno Website, welche den Code von https://github.com/denoland/deno/tree/f96aaa802b245c8b3aeb5d57b031f8a55bb07de2/website und https://github.com/denoland/registry kombiniert und eine schnellere Bereitstellung ermöglicht.
 
-This is written in React / TailwindCSS / Vercel / CloudFlare Workers. Not in
-Deno. Ideally this could be ported to Deno at some point but we are in need of a
-new website and dogfooding takes too long. We hope to see this code ported to
-Deno with minimal developer flow interrupted (in particular, we need the ability
-to listen for FS events and reload the web server).
+Dies wurde in React / TailwindCSS / Vercel / CloudFlare Workers geschrieben, nicht in Deno. Idealerweise könnte dies irgendwann nach Deno portiert werden, aber wir brauchen dafür eine neue Website und das braucht zu viel Zeit. Wir hoffen, dass dieser Code mit einem minimalen Entwicklereinfluss nach Deno übertragen werden kann (insbesondere muss es möglich sein, auf FS-Ereignisse warten und den Webserver neu laden zu können).
 
-## Image License
+## Bildlizenz
 
-These Deno images are distributed under the MIT license (public domain and free
-for use).
+Diese Deno Bilder werden unter der MIT Lizenz verbreitet (gemeinfrei und kostenlos).
 
-- [A graphic for the v1 blog post by @hashrock](https://deno.land/v1.jpg)
+- [Eine Grafik für den v1-Blogbeitrag von @hashroc](https://deno.land/v1.jpg)
